@@ -1,12 +1,14 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Haxrat
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
