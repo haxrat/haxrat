@@ -68,3 +68,53 @@ function toolbox_widgets_init() {
 	) );	
 }
 add_action( 'init', 'toolbox_widgets_init' );
+
+/**
+ * Title optimize
+ */
+function seo_title() {
+	global $page, $paged;
+    $sep = " - "; # delimiter
+    $newtitle = get_bloginfo('name'); # default title
+
+    # Single & Page ##################################
+    if (is_single() || is_page())
+        $newtitle = single_post_title("", false);
+
+    # Category ######################################
+    if (is_category())
+        $newtitle = single_cat_title("", false);
+
+    # Tag ###########################################
+    if (is_tag())
+     $newtitle = single_tag_title("", false);
+
+    # Search result ################################
+    if (is_search())
+     $newtitle = "Search Result " . $s;
+
+    # Taxonomy #######################################
+    if (is_tax()) {
+        $curr_tax = get_taxonomy(get_query_var('taxonomy'));
+        $curr_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); # current term data
+        # if it's term
+        if (!empty($curr_term)) {
+            $newtitle = $curr_tax->label . $sep . $curr_term->name;
+        } else {
+            $newtitle = $curr_tax->label;
+        }
+    }
+
+    # Page number
+    if ($paged >= 2 || $page >= 2)
+            $newtitle .= $sep . sprintf('第%页', max($paged, $page));
+
+    # Home & Front Page ########################################
+    if (is_home() || is_front_page()) {
+        $newtitle = get_bloginfo('name') . $sep . get_bloginfo('description');
+    } else {
+        $newtitle .=  $sep . get_bloginfo('name');
+    }
+	return $newtitle;
+}
+add_filter('wp_title', 'seo_title');
