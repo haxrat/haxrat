@@ -69,6 +69,8 @@ function toolbox_widgets_init() {
 }
 add_action( 'init', 'toolbox_widgets_init' );
 
+#delete above
+
 /**
  * Title optimize
  */
