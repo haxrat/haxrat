@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Haxrat
  */
 
 get_header(); ?>
