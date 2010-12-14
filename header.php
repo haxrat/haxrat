@@ -11,6 +11,14 @@
 
 <title><?php wp_title ( '-', true, 'right' ); ?></title>
 
+<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<meta name="description" content="<?php the_excerpt_rss(); ?>" />
+<meta name="keywords" content="<?php echo meta_keywords(); ?>"/>
+<?php endwhile; endif; elseif(is_home()) : ?>
+<meta name="description" content="###" />
+<meta name="keywords" content="#,#,#" />
+<?php endif; ?>
+
 <link rel="shortcut icon" href="<?php bloginfo( 'template_directory' ); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'template_directory' ); ?>/images/apple-touch-icon.png">
 

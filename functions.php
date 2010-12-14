@@ -72,6 +72,17 @@ add_action( 'init', 'toolbox_widgets_init' );
 #delete above
 
 /**
+ * Tags as meta keywords
+ **/
+function meta_keywords() {
+	$posttags = get_the_tags();
+	foreach((array)$posttags as $tag) {
+			$meta_keywords .= $tag->name . ',';
+	}
+	return substr($meta_keywords,0,-1);
+}
+
+/**
  * Title optimize
  */
 function seo_title() {
