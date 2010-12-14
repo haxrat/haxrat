@@ -79,23 +79,23 @@ function seo_title() {
     $sep = " - "; # delimiter
     $newtitle = get_bloginfo('name'); # default title
 
-    # Single & Page ##################################
+    # Single & Page 
     if (is_single() || is_page())
         $newtitle = single_post_title("", false);
 
-    # Category ######################################
+    # Category 
     if (is_category())
         $newtitle = single_cat_title("", false);
 
-    # Tag ###########################################
+    # Tag 
     if (is_tag())
      $newtitle = single_tag_title("", false);
 
-    # Search result ################################
+    # Search result 
     if (is_search())
      $newtitle = "Search Result " . $s;
 
-    # Taxonomy #######################################
+    # Taxonomy 
     if (is_tax()) {
         $curr_tax = get_taxonomy(get_query_var('taxonomy'));
         $curr_term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); # current term data
