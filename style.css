@@ -113,3 +113,8 @@ input, select {
 }
 
 /* == End of CSS reset == */
+
+/* == Font Reset == */
+body { font:13px/1.231 sans-serif; *font-size:small; }
+select, input, textarea, button { font:99% sans-serif; }
+/* == End of Font Reset == */
