@@ -14,6 +14,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="<?php bloginfo( 'template_directory' ); ?>/js/script.js"></script>
 <?php wp_footer(); ?>
 
 </body>
