@@ -71,6 +71,22 @@ add_action( 'init', 'toolbox_widgets_init' );
 
 #delete above
 
+
+function haxrat_setup() {
+
+	// This theme styles the visual editor with editor-style.css to match the theme style.
+	add_editor_style();
+
+	// This theme uses post thumbnails
+	add_theme_support( 'post-thumbnails' );
+
+	// Add default posts and comments RSS feed links to head
+	add_theme_support( 'automatic-feed-links' );
+}
+add_action( 'after_setup_theme', 'haxrat_setup' );
+
+
+
 /**
  * Tags as meta keywords
  **/

@@ -8,17 +8,22 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '点击阅读全文', 'haxrat' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'toolbox' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 			<div class="entry-date">
 				<?php time_ago(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
-	
+
+		<a href="<?php the_permalink() ?>" class="thumb"><?php the_post_thumbnail('thumbnail', array(
+					'alt'	=> trim(strip_tags( $post->post_title )),
+					'title'	=> trim(strip_tags( $post->post_title )),
+				)); ?></a>
+		
 		<div class="entry-summary">
 			<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox' ) ); ?>
 		</div><!-- .entry-summary -->
-		
+
 		<footer class="entry-meta">
 			<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'toolbox' ); ?></span><?php the_category( ', ' ); ?></span>
 			<span class="sep"> | </span>
@@ -35,4 +40,3 @@
 <?php if (function_exists("pagination")) { 
 	pagination($additional_loop->max_num_pages);
 } ?>
-
