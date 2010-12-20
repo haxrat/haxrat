@@ -10,7 +10,7 @@
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( '点击阅读全文', 'haxrat' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
-			<div class="entry-meta">
+			<div class="entry-date">
 				<?php time_ago(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
