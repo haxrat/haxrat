@@ -132,6 +132,10 @@ function seo_title() {
 }
 add_filter('wp_title', 'seo_title');
 
+function time_ago() {
+	echo '发布于 ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . '前';
+}
+
 /*
  * Better Pagination
  */
