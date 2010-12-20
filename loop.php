@@ -14,18 +14,11 @@
 				<?php time_ago(); ?>
 			</div><!-- .entry-meta -->
 		</header><!-- .entry-header -->
-
-		<?php if ( is_archive() || is_search() ) : // Only display Excerpts for archives & search ?>
+	
 		<div class="entry-summary">
 			<?php the_excerpt( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox' ) ); ?>
 		</div><!-- .entry-summary -->
-		<?php else : ?>
-		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ), 'after' => '</div>' ) ); ?>
-		</div><!-- .entry-content -->
-		<?php endif; ?>
-
+		
 		<footer class="entry-meta">
 			<span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'toolbox' ); ?></span><?php the_category( ', ' ); ?></span>
 			<span class="sep"> | </span>
