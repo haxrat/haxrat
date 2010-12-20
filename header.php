@@ -26,7 +26,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<script src="<?php bloginfo( 'template_directory' ); ?>/js/libs/modernizr-1.6.min.js" type="text/javascript"></script>
+<script src="//jslibcdn.googlecode.com/svn/trunk/modernizr-1.6.min.js" type="text/javascript"></script>
 
 <?php wp_head(); ?>
 </head>
