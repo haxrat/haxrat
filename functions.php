@@ -148,8 +148,16 @@ function seo_title() {
 }
 add_filter('wp_title', 'seo_title');
 
-function time_ago() {
-	echo '发布于 ' . human_time_diff(get_the_time('U'), current_time('timestamp')) . '前';
+function post_ago() {
+	$diff = (current_time('timestamp') - get_the_time('U'));
+	if ( $diff > 86400)
+	printf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+               get_permalink(),
+               esc_attr( get_the_time() ),
+               get_the_date()
+               );
+		else
+	echo '发布于' . human_time_diff(get_the_time('U'),current_time('timestamp')) . '前';
 }
 
 /*
